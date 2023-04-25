@@ -7,9 +7,16 @@ function App() {
 
   return (
     <div className="App">
-      <ImageCropper aspectRatio={1 / 1} onCrop={handleUploadImage}>
-        <button>이미지 업로드</button>
-      </ImageCropper>
+      <div className="profile">
+        {uploadImage ? (
+          <img src={uploadImage} />
+        ) : (
+          <div className="cover">이미지가 없어요.</div>
+        )}
+        <ImageCropper aspectRatio={1 / 1} onCrop={handleUploadImage}>
+          <button className="image-upload-button">📷</button>
+        </ImageCropper>
+      </div>
     </div>
   );
 }

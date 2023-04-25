@@ -103,3 +103,45 @@ button {
   color: white;
   border: none;
 }
+
+.profile {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.profile .cover {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+  background: #7b73df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.profile > img {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.image-upload-button {
+  position: absolute;
+  background: #c4c4c4;
+  border: none;
+  bottom: 0;
+  right: 4px;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 60px;
+}
+
+.image-upload-button:hover {
+  background: #d4d4d4;
+}
