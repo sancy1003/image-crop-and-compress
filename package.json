@@ -10,6 +10,7 @@
     "@types/node": "^16.18.24",
     "@types/react": "^18.0.38",
     "@types/react-dom": "^18.0.11",
+    "browser-image-compression": "^2.0.2",
     "react": "^18.2.0",
     "react-cropper": "^2.3.3",
     "react-dom": "^18.2.0",

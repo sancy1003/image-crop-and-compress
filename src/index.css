@@ -25,6 +25,8 @@ button {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  row-gap: 30px;
   align-items: center;
   justify-content: center;
 }
@@ -144,4 +146,11 @@ button {
 
 .image-upload-button:hover {
   background: #d4d4d4;
+}
+
+.image-compress-button {
+  border: 1px solid #c3c3c3;
+  background: #ffffff;
+  width: 100px;
+  height: 30px;
 }

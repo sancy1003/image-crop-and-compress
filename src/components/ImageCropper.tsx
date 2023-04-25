@@ -10,8 +10,8 @@ interface PropsType {
 
 const ImageCropper = ({ children, aspectRatio, onCrop }: PropsType) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [image, setImage] = useState<null | string>(null);
   const cropperRef = useRef<ReactCropperElement>(null);
+  const [image, setImage] = useState<null | string>(null);
 
   const handleChildrenClick = () => {
     if (inputRef.current) inputRef.current.click();
@@ -19,12 +19,14 @@ const ImageCropper = ({ children, aspectRatio, onCrop }: PropsType) => {
 
   const handleFileChange = (e: any) => {
     e.preventDefault();
+
     let files;
     if (e.dataTransfer) {
       files = e.dataTransfer.files;
     } else if (e.target) {
       files = e.target.files;
     }
+
     const reader = new FileReader();
     reader.onload = () => {
       setImage(reader.result as string);
