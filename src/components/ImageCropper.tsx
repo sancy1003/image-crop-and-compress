@@ -1,4 +1,4 @@
-import { useRef, useState, createRef } from "react";
+import { useRef, useState } from "react";
 import { Cropper, ReactCropperElement } from "react-cropper";
 import "cropperjs/dist/cropper.css";
 
@@ -17,15 +17,12 @@ const ImageCropper = ({ children, aspectRatio, onCrop }: PropsType) => {
     if (inputRef.current) inputRef.current.click();
   };
 
-  const handleFileChange = (e: any) => {
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
-    let files;
-    if (e.dataTransfer) {
-      files = e.dataTransfer.files;
-    } else if (e.target) {
-      files = e.target.files;
-    }
+    const files = e.target.files;
+
+    if (!files) return;
 
     const reader = new FileReader();
     reader.onload = () => {
@@ -49,7 +46,7 @@ const ImageCropper = ({ children, aspectRatio, onCrop }: PropsType) => {
         style={{ display: "none" }}
         onChange={handleFileChange}
       />
-      <div onClick={handleChildrenClick}>{children}</div>
+      <span onClick={handleChildrenClick}>{children}</span>
       {image && (
         <div className="container">
           <div className="backdrop" />
